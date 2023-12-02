@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TEST</title>
+    <style>
+        
+        .navbar {
+            background-color: #adc178; 
+            overflow: hidden; 
+        }
+
+        
+        .navbar a {
+            float: right;
+            display: block; /* Menjadikan tautan sebagai blok */
+            font-family:arial; /* Menggunakan font Arial */
+            color: #6c584c; /* Warna teks tautan */
+            text-align: center; /* Pusatkan teks tautan */
+            padding: 14px 16px; /* Ruang di dalam tautan */
+            text-decoration: none; /* Hapus dekorasi tautan */
+        }
+
+        .navbar b {
+            float:left;
+            display: block; /* Menjadikan tautan sebagai blok */
+            font-family:arial; /* Menggunakan font Arial */
+            color: #6c584c; /* Warna teks tautan */
+            text-align: center; /* Pusatkan teks tautan */
+            padding: 14px 16px; /* Ruang di dalam tautan */
+            text-decoration: none; /* Hapus dekorasi tautan */
+            margin-left: 3cm;
+        }
+        /* Hover tautan navbar */
+        .navbar a:hover {
+            background-color: #dde5b6; /* Warna latar belakang saat dihover */
+        }
+
+        /* Styling untuk carousel container */
+        .carousel {
+            width: 1000px; /* Lebar carousel */
+            height: 700px;
+            overflow: hidden; /* Mengatasi overflow */
+            position: relative; /* Menetapkan posisi relatif untuk item carousel */
+            margin:auto;
+            justify-content: center;
+        }
+
+        /* Styling untuk gambar carousel */
+        .carousel img {
+            width: 100%; /* Gambar mengisi lebar carousel */
+            height: auto; /* Menjaga rasio aspek gambar */
+        }
+
+        /* Styling untuk tombol navigasi */
+        .prev, .next {
+            cursor: pointer; /* Kursor berubah saat dihover */
+            position: absolute; /* Menetapkan posisi absolut */
+            top: 50%; /* Menempatkan tombol di tengah vertikal */
+            transform: translateY(-50%); /* Menggeser tombol ke atas sejauh setengah dari tingginya */
+            padding: 10px; /* Ruang di dalam tombol */
+            background-color: #adc178; /* Warna latar belakang tombol */
+            color: white; /* Warna teks tombol */
+        }
+
+        /* Styling untuk tombol sebelumnya */
+        .prev {
+            left: 0; /* Tombol sebelumnya ada di sisi kiri */
+        }
+
+        /* Styling untuk tombol selanjutnya */
+        .next {
+            right: 0; /* Tombol selanjutnya ada di sisi kanan */
+        }
+
+
+    </style>
+</head>
+<body>
+
+
+<!-- Navbar -->
+<div class="navbar b">
+    <h1>SHANNON ANDREA</h1>
+</div>
+
+<div class="navbar a">
+    <a href="#home">Home</a>
+    <a href="#tentang">About Us</a>
+    <a href="#layanan">Service</a>
+    <a href="#kontak">Contact Us</a>
+</div>
+
+<!-- Isi halaman web Anda akan ada di sini -->
+
+<!-- Carousel Container -->
+<div class="carousel" style="width :1200px"> 
+    <img src="gg1.jpg" alt="Gambar 1">
+    <img src="gg2.jpg" alt="Gambar 2">
+    <img src="gg3.jpg" alt="Gambar 3">
+</div>
+
+<!-- Tombol Navigasi -->
+<span class="prev" onclick="previousSlide()">&#10094;</span>
+<span class="next" onclick="nextSlide()">&#10095;</span>
+
+<script>
+    var slideIndex = 0; // Indeks gambar saat ini
+
+    // Fungsi untuk menampilkan gambar selanjutnya
+    function nextSlide() {
+        var slides = document.getElementsByTagName('img');
+        slideIndex++;
+        if (slideIndex >= slides.length) {
+            slideIndex = 0;
+        }
+        showSlide(slideIndex);
+    }
+
+    // Fungsi untuk menampilkan gambar sebelumnya
+    function previousSlide() {
+        var slides = document.getElementsByTagName('img');
+        slideIndex--;
+        if (slideIndex < 0) {
+            slideIndex = slides.length - 1;
+        }
+        showSlide(slideIndex);
+    }
+
+    // Fungsi untuk menampilkan gambar tertentu
+    function showSlide(index) {
+        var slides = document.getElementsByTagName('img');
+        for (var i = 0; i < slides.length; i++) {
+            slides[i].style.display = 'none';
+        }
+        slides[index].style.display = 'block';
+    }
+
+    // Memulai dengan menampilkan gambar pertama
+    showSlide(slideIndex);
+</script>
+
+</body>
+</html>
+
